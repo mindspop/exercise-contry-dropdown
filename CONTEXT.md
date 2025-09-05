@@ -41,6 +41,25 @@ The headings below are just there to guide you, feel free to remove them or add 
 - Consider responsiveness (to be confirmed with designer).
 - Consider mobile support (to be confirmed with designer).
 
+## Unit Test
+
+`npm run test`
+
+Why Vitest？
+
+- Jest is not supported by Vite.
+- Vitest provides a Jest-compatible API. Although I haven’t used Vitest before, the learning curve is low.
+- Vitest and Vite are highly compatible.
+
+Why React Testing Library?
+
+- It encourages writing tests that reflect how users actually interact with your app.
+
+References
+
+- [Jest Docs – Using Vite](https://jestjs.io/docs/getting-started#using-vite)
+- [Vitest with React Testing Library in Vite](https://victorbruce82.medium.com/vitest-with-react-testing-library-in-react-created-with-vite-3552f0a9a19a)
+
 ### State Management
 
 ### CSS Styling
