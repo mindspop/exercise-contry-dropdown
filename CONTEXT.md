@@ -15,6 +15,32 @@ The headings below are just there to guide you, feel free to remove them or add 
 
 ---
 
+## Requirements
+
+- Support both controlled and uncontrolled select components.
+- Select input states: hover, focused, error, disabled.
+- Support placeholder text.
+- Option states: enabled, hover, selected, selected(hover), disabled.
+- Dropdown:
+  - Has a max-height.
+  - Supports empty and loading states (to be confirmed with designer).
+- Support keyboard shortcuts.
+
+### Interaction
+
+- Hovering over the select button shows the hover style.
+- Clicking the select button shows the dropdown and focuses the input.
+- Double-clicking the select button hides the dropdown.
+- Clicking an option updates the input value and hides the dropdown.
+- Clicking outside the component hides the dropdown and removes input focus.
+
+### Style
+
+- Follow styles from Figma UI design.
+- Ensure consistent dropdown scrollbar style across browsers.
+- Consider responsiveness (to be confirmed with designer).
+- Consider mobile support (to be confirmed with designer).
+
 ### State Management
 
 ### CSS Styling
