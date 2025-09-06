@@ -64,4 +64,8 @@ References
 
 ### CSS Styling
 
-### Data Fetching
+styled-jsx
+
+- Better suited for componentization. Keeping styles and structure together makes maintenance easier and improves the developer experience.
+- Approach I’m more familiar with. Although it’s not a zero-runtime solution, in past projects I haven’t encountered any performance issues with it.
+- Flexible style customization, which makes it well-suited for scenarios where component styles need to be customized.
