@@ -1,38 +1,120 @@
-import { describe, test, expect } from "vitest";
+import { screen, render } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+
+import Select from "./Select";
 
 describe("Select Component - Initial Rendering", () => {
   test("should render select input with placeholder text when no value is selected", () => {
-    expect(false).toBe(true);
+    render(
+      <Select placeholder="123">
+        <Select.Option value={1}>1</Select.Option>
+      </Select>,
+    );
+
+    const input = screen.getByRole("textbox");
+
+    expect(input).toHaveValue("123");
   });
 
   test("should render dropdown in closed state by default", () => {
-    expect(false).toBe(true);
+    render(
+      <Select>
+        <Select.Option value={1}>1</Select.Option>
+      </Select>,
+    );
+
+    expect(screen.queryByRole("list")).not.toBeInTheDocument();
   });
 
   test("should display selected value in input when a value is provided", () => {
-    expect(false).toBe(true);
+    render(
+      <Select value={1}>
+        <Select.Option value={1}>1</Select.Option>
+      </Select>,
+    );
+
+    const input = screen.getByRole("textbox");
+
+    expect(input).toHaveValue("1");
   });
 });
 
 describe("Select Component - User Interactions", () => {
   test("should apply hover styles when mouse enters select button", async () => {
-    expect(false).toBe(true);
+    render(
+      <Select>
+        <Select.Option value={1}>1</Select.Option>
+      </Select>,
+    );
+
+    const input = screen.getByRole("textbox");
+    await userEvent.hover(input);
+
+    expect(input).toHaveStyle({ cursor: "pointer" });
   });
 
   test("should open dropdown and focus input when select button is clicked", async () => {
-    expect(false).toBe(true);
+    render(
+      <Select>
+        <Select.Option value={1}>1</Select.Option>
+      </Select>,
+    );
+
+    const input = screen.getByRole("textbox");
+    await userEvent.click(input);
+
+    expect(screen.getByRole("list")).toBeInTheDocument();
+    expect(input).toHaveFocus();
   });
 
   test("should close dropdown when select button is clicked while dropdown is open", async () => {
-    expect(false).toBe(true);
+    render(
+      <Select>
+        <Select.Option value={1}>1</Select.Option>
+      </Select>,
+    );
+
+    const input = screen.getByRole("textbox");
+    await userEvent.click(input);
+    expect(screen.getByRole("list")).toBeInTheDocument();
+
+    await userEvent.click(input);
+    expect(screen.queryByRole("list")).not.toBeInTheDocument();
   });
 
   test("should update input value and close dropdown when an option is selected", async () => {
-    expect(false).toBe(true);
+    render(
+      <Select>
+        <Select.Option value={1}>1</Select.Option>
+        <Select.Option value={2}>2</Select.Option>
+      </Select>,
+    );
+
+    const input = screen.getByRole("textbox");
+    await userEvent.click(input);
+    const option = screen.getAllByRole("listitem")[0];
+    await userEvent.click(option);
+
+    expect(screen.queryByRole("list")).not.toBeInTheDocument();
+    expect(screen.queryByRole("textbox")).toHaveValue("1");
   });
 
   test("should close dropdown and blur input when clicking outside the component", async () => {
-    expect(false).toBe(true);
+    render(
+      <div data-testid="1">
+        <Select>
+          <Select.Option value={1}>1</Select.Option>
+        </Select>
+      </div>,
+    );
+
+    const input = screen.getByRole("textbox");
+    await userEvent.click(input);
+    expect(screen.getByRole("list")).toBeInTheDocument();
+    const outside = screen.getByTestId("1");
+    await userEvent.click(outside);
+
+    expect(screen.queryByRole("list")).not.toBeInTheDocument();
   });
 });
 

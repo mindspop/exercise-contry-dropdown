@@ -41,6 +41,12 @@ The headings below are just there to guide you, feel free to remove them or add 
 - Consider responsiveness (to be confirmed with designer).
 - Consider mobile support (to be confirmed with designer).
 
+## Component Design Philosophy
+
+- Mimic the native `<select>` component to reduce the learning curve.
+- Keep usage simple and intuitive for developers.
+- Split Select, Dropdown, and Option into separate components to improve extensibility and maintainability.
+
 ## Unit Test
 
 `npm run test`
@@ -60,9 +66,11 @@ References
 - [Jest Docs – Using Vite](https://jestjs.io/docs/getting-started#using-vite)
 - [Vitest with React Testing Library in Vite](https://victorbruce82.medium.com/vitest-with-react-testing-library-in-react-created-with-vite-3552f0a9a19a)
 
-### State Management
+## State Management
 
-### CSS Styling
+- Use useContext to decouple Option from Select, and also avoid the props drilling problem.
+
+## CSS Styling
 
 styled-jsx
 

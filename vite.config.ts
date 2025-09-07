@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [
     react({
       babel: {
-        plugins: ["styled-jsx/babel"],
+        plugins: [["styled-jsx/babel", { optimizeForSpeed: true }]],
       },
     }),
     mdx(),

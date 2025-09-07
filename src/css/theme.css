@@ -1,0 +1,24 @@
+:root {
+    --select-width: 300px;
+    --select-height: 48px;
+    --select-dropdown-max-height: 300px;
+
+    --border-radius: 8px;
+
+    --color-primary: #B5D2F9;
+    --color-secondary: #DBEAFE;
+    --color-grey: #90A1B9;
+    --color-black: #314158;
+    --color-white: #FFF;
+
+    --color-disabled: var(--color-grey);
+    --color-option-hover: #F1F5F9;
+    --color-text-primary: #1D293D;
+    --color-text-secondary: #62748E;
+    --color-text-placeholder: var(--color-grey);
+    --color-error: #E7000B;
+    --color-border: var(--color-grey);
+    --color-border-hover: #314158;
+    --color-border-focus: #2B7FFF;
+    --color-scrollbar: #CAD5E2;
+}
